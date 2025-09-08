@@ -20,6 +20,8 @@
   <h1>phone</h1>
   <input type ="text" name = "phone"><br>
   <button type = "submit"> Thêm</button>
+  <a href="customers">Hủy</a>
 </form>
+
 </body>
 </html>

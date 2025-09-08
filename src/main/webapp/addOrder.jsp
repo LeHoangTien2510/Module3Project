@@ -30,6 +30,7 @@
 <h2>Ghi số lượng</h2>
 <input type ="text" name = "quantity"><br>
     <button type = "submit"> Thêm</button>
+    <a href="orders">Hủy</a>
 </form>
 </body>
 </html>

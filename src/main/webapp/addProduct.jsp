@@ -19,6 +19,7 @@
   <h1>Số lượng còn</h1>
   <input type ="text" name = "quantity"><br>
   <button type = "submit"> Thêm</button>
+  <a href="products">Hủy</a>
 </form>
 </body>
 </html>

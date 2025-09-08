@@ -12,7 +12,9 @@
     <title>customer List</title>
 </head>
 <body>
-<a href="addCustomer.jsp">Thêm khách hàng</a>
+<a href="addCustomer.jsp">Thêm khách hàng</a><br>
+<a href ="orders">Xem danh sách đơn hàng</a><br>
+<a href = "products">Xem danh sách sản phẩm</a><br>
 <table border="1">
     <tr>
         <th>Mã số khách hàng</th>

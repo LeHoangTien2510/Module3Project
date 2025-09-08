@@ -12,7 +12,9 @@
     <title>Product List</title>
 </head>
 <body>
-<a href="addProduct.jsp">Thêm sản phẩm </a>
+<a href="addProduct.jsp">Thêm sản phẩm </a><br>
+<a href ="orders">Xem danh sách đơn hàng</a><br>
+<a href = "customers">Xem danh sách khách hàng</a><br>
 <table border="1">
     <tr>
         <th>Mã số sản phẩm</th>

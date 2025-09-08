@@ -12,7 +12,9 @@
     <title>Order List</title>
   </head>
   <body>
-  <a href="./AddOrder">Thêm đơn hàng</a>
+  <a href="./AddOrder">Thêm đơn hàng</a><br>
+  <a href ="customers">Xem danh sách khách hàng</a><br>
+  <a href = "products">Xem danh sách sản phẩm</a><br>
   <table border="1">
     <tr>
       <th>Mã số đơn hàng</th>
@@ -21,7 +23,7 @@
       <th>Số lượng</th>
       <th>Giá tiền mỗi sản phẩm</th>
       <th>Tổng số tiền</th>
-      <th>Chỉnh sửa số lượng</th>
+      <th>Chỉnh sửa</th>
       <th>Xóa</th>
     </tr>
 
@@ -33,7 +35,7 @@
         <td><c:out value="${od.quantity}" /></td>
         <td><c:out value="${od.priceEach}" /></td>
         <td><c:out value="${od.total}" /></td>
-        <td><a href="./EditEmployee?id=${emp.id}">Chỉnh sửa</a></td>
+        <td><a href="./EditOrder?id=${od.orderId}">Chỉnh sửa</a></td>
         <td>
           <a href="DeleteOrder?id=${od.orderId}"
              onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?');">

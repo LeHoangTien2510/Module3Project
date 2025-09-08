@@ -70,7 +70,17 @@ public class JdbcOrderDAO implements OrderDAO {
 
     @Override
     public void update(Order order) {
-
+        String sql = "UPDATE orders SET customer_id=?, product_id =?, quantity =?  WHERE id=?";
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, order.getCustomerId());
+            ps.setInt(2, order.getProductId());
+            ps.setInt(3, order.getQuantity());
+            ps.setInt(4, order.getId());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

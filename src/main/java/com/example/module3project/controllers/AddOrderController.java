@@ -24,12 +24,12 @@ public class AddOrderController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Customer> CustomerList = new ArrayList<>();
-        List<Product> ProductList = new ArrayList<>();
+        List<Customer> CustomerList =jdbcCustomerDAO.findAll();
+        List<Product> ProductList = jdbcProductDAO.findAll();
 
         req.setAttribute("CustomerList", CustomerList);
         req.setAttribute("ProductList", ProductList);
-        req.getRequestDispatcher("AddOrder.jsp").forward(req, resp);
+        req.getRequestDispatcher("addOrder.jsp").forward(req, resp);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

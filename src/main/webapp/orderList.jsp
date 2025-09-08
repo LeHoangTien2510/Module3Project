@@ -12,6 +12,7 @@
     <title>Order List</title>
   </head>
   <body>
+  <a href="./AddOrder">Thêm đơn hàng</a>
   <table border="1">
     <tr>
       <th>Mã số đơn hàng</th>

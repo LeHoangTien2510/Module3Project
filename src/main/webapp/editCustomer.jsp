@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Edit Customer</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/edit-customer.css">
 </head>
 <body>
 <h2>Chỉnh sửa khách hàng</h2>

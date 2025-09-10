@@ -1,0 +1,146 @@
+/* =======================
+   ADD ORDER – High-Contrast UI
+   (CSS only – no logic change)
+   ======================= */
+
+/* ---- Theme tokens ---- */
+:root{
+    --bg: #0b1220;
+    --panel: #111827;
+    --text: #f8fafc;
+    --muted: #cbd5e1;
+    --brand: #4f46e5;
+    --danger: #ef4444;
+    --ring: #22d3ee;
+    --border: rgba(203,213,225,.55);
+    --row-hover: rgba(255,255,255,.08);
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* ---- Base ---- */
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+    margin: 0;
+    font: 15px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    color: var(--text);
+    background:
+            radial-gradient(1200px 600px at 20% 0%, rgba(79,70,229,0.14), transparent 60%),
+            radial-gradient(1000px 500px at 100% 10%, rgba(34,211,238,0.12), transparent 60%),
+            var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Layout wrappers (được phép thêm) ---- */
+.container{
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+.card{
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)), var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px 22px 18px;
+}
+
+/* ---- Headings sẵn có ---- */
+h1, h2{ margin: 0 0 10px; }
+h1{
+    font-size: clamp(22px, 3.2vw, 28px);
+    letter-spacing: .2px;
+    margin-bottom: 16px;
+}
+h2{
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 18px;
+}
+
+/* ---- Field spacing (chỉ thêm div.field) ---- */
+.field{ margin: 6px 0 10px; }
+
+/* ---- Controls (giữ nguyên name/loại) ---- */
+select,
+input[type="text"]{
+    width: 100%;
+    padding: 12px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    background: #0b1220;          /* tối để chữ nổi */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    color-scheme: dark;
+}
+select:hover,
+input[type="text"]:hover{
+    background: rgba(15,23,42,.9);
+}
+select:focus,
+input[type="text"]:focus{
+    border-color: var(--ring);
+    box-shadow: 0 0 0 4px rgba(34,211,238,.28);
+}
+::placeholder{ color:#e2e8f0; opacity:1; }
+
+/* Dropdown options (mức hỗ trợ tùy trình duyệt) */
+select option{
+    color: #f8fafc;
+    background: #0b1220;
+    font-weight: 600;
+}
+select option:checked{
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* ---- Actions (button + link Hủy) ---- */
+.actions{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+button[type="submit"]{
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+button[type="submit"]:hover{ transform: translateY(-1px); }
+button[type="submit"]:active{ transform: translateY(0); }
+button[type="submit"]:focus-visible{
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(34,211,238,.35);
+}
+
+.actions a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.actions a:hover{ background: var(--row-hover); transform: translateY(-1px); }
+.actions a:active{ transform: translateY(0); }
+.actions a:focus-visible{
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(34,211,238,.25);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px){
+    .container{ margin: 24px auto; }
+    .card{ padding: 18px; }
+}

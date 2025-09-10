@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Edit Product</title>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/edit-product.css">
+
 </head>
 <body>
 <h2>Chỉnh sửa sản phẩm</h2>

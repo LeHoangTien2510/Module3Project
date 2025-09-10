@@ -17,6 +17,6 @@ public class DeleteOrderController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         jdbcOrderDAO.delete(id);
-        resp.sendRedirect("/orders");
+        resp.sendRedirect("./orders");
     }
 }

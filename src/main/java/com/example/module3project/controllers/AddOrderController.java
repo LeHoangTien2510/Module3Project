@@ -37,8 +37,21 @@ public class AddOrderController extends HttpServlet {
         int productId = Integer.parseInt(request.getParameter("product_id"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
 
-        Order order = new Order(customerId, productId, quantity);
-        jdbcOrderDAO.add(order);
-        response.sendRedirect("orders");
+        int ProductQuantity = jdbcProductDAO.findById(productId).getQuantity();
+        if(quantity > ProductQuantity){
+            String errorMessage = "Không đủ số lượng trong kho hàng";
+            request.setAttribute("errorMessage", errorMessage);
+            request.setAttribute("CustomerList", jdbcCustomerDAO.findAll());
+            request.setAttribute("ProductList", jdbcProductDAO.findAll());
+            request.getRequestDispatcher("addOrder.jsp").forward(request, response);
+        }
+        else {
+            Order order = new Order(customerId, productId, quantity);
+            jdbcOrderDAO.add(order);
+            Product product = jdbcProductDAO.findById(productId);
+            product.setQuantity(product.getQuantity() - quantity);
+            jdbcProductDAO.update(product);
+            response.sendRedirect("orders");
+        }
     }
 }

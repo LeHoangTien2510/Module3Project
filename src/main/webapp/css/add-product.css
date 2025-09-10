@@ -1,0 +1,59 @@
+
+:root{
+    --bg:#0b1220; --panel:#111827; --text:#f8fafc; --muted:#cbd5e1;
+    --brand:#4f46e5; --border:rgba(203,213,225,.55); --ring:#22d3ee;
+    --shadow:0 10px 30px rgba(0,0,0,.35); --radius:16px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+    margin:0; color:var(--text);
+    font:15px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background:
+            radial-gradient(1200px 600px at 20% 0%, rgba(79,70,229,.14), transparent 60%),
+            radial-gradient(1000px 500px at 100% 10%, rgba(34,211,238,.12), transparent 60%),
+            var(--bg);
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+
+body > form{
+    max-width:720px; margin:40px auto; padding:22px 22px 18px;
+    background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)), var(--panel);
+    border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow);
+}
+
+h1{ margin:0 0 10px; font-size:18px; color:var(--muted); }
+
+input[type="text"], input[type="number"]{
+    width:100%; padding:12px; margin:6px 0 10px;
+    color:var(--text); background:#0b1220; border:1px solid var(--border); border-radius:12px;
+    outline:none; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    color-scheme:dark;
+}
+input[type="text"]:hover, input[type="number"]:hover{ background:rgba(15,23,42,.9); }
+input[type="text"]:focus, input[type="number"]:focus{
+    border-color:var(--ring); box-shadow:0 0 0 4px rgba(34,211,238,.28);
+}
+::placeholder{ color:#e2e8f0; opacity:1; }
+
+button[type="submit"]{
+    padding:10px 16px; border:1px solid transparent; border-radius:999px;
+    background:var(--brand); color:#fff; font-weight:700; cursor:pointer;
+    box-shadow:var(--shadow);
+    transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+button[type="submit"]:hover{ transform:translateY(-1px); box-shadow:0 14px 34px rgba(79,70,229,.45); }
+button[type="submit"]:active{ transform:translateY(0); box-shadow:0 8px 20px rgba(79,70,229,.32); }
+button[type="submit"]:focus-visible{ outline:none; box-shadow:0 0 0 4px rgba(34,211,238,.35), var(--shadow); }
+
+form a{
+    display:inline-block; margin-left:10px; padding:10px 14px; text-decoration:none; color:#fff;
+    border:1px solid var(--border); border-radius:999px; transition:background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+form a:hover{ background:rgba(255,255,255,.08); transform:translateY(-1px); }
+form a:focus-visible{ outline:none; box-shadow:0 0 0 4px rgba(34,211,238,.25); }
+
+@media (max-width:640px){
+    body > form{ margin:24px 12px; padding:18px; }
+}

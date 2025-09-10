@@ -10,11 +10,13 @@
 <html>
   <head>
     <title>Order List</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/order-list.css">
   </head>
   <body>
-  <a href="./AddOrder">Thêm đơn hàng</a><br>
-  <a href ="customers">Xem danh sách khách hàng</a><br>
-  <a href = "products">Xem danh sách sản phẩm</a><br>
+  <h1>Danh sách đơn hàng</h1>
+  <a href="./AddOrder">Thêm đơn hàng</a>
+  <a href ="customers">Xem danh sách khách hàng</a>
+  <a href = "products">Xem danh sách sản phẩm</a>
   <table border="1">
     <tr>
       <th>Mã số đơn hàng</th>

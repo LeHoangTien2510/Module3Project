@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Add Product</title>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/add-product.css">
+
 </head>
 <body>
 <form action = "./AddProduct" method="post">
